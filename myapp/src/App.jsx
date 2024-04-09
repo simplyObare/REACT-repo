@@ -1,11 +1,12 @@
-import './App.css'
+// import Fruits from './Components/Fruits'
+// import Message from './Components/Message'
+// import Counter from './Components/Counter'
+import Form from './Components/Form'
 
-function App() {
+export default function App() {
   return (
-    <>
-      <p>Hello world</p>
-    </>
+    <main>
+      <Form />
+    </main>
   )
 }
-
-export default App
