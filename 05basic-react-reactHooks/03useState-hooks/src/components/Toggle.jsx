@@ -3,9 +3,9 @@ import { useState } from 'react'
 export default function Toggle() {
   const [toggle, setToggle] = useState(false)
 
-  const handleToggle = () => {
-    setToggle(!toggle)
-  }
+  // const handleToggle = () => {
+  //   setToggle(!toggle)
+  // }
 
   return (
     <div className="App">
@@ -13,7 +13,7 @@ export default function Toggle() {
       <div>
         {toggle ? <p>Hello World</p> : null}
 
-        <button onClick={handleToggle}>Toggle Text</button>
+        <button onClick={() => setToggle(!toggle)}>Toggle Text</button>
       </div>
     </div>
   )
