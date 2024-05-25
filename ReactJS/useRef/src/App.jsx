@@ -11,6 +11,7 @@ function App() {
   const handleChange = (e) => {
     setRandomInput(e.target.value)
     renders.current++
+    e.preventDefault()
   }
 
   const startTimer = () => {
