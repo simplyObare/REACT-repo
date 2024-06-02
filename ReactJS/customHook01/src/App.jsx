@@ -1,34 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isOpen, setIsOpen] = useState(false)
+
+  function toggle() {
+    setIsOpen(!isOpen)
+  }
+  function onOpen() {
+    setIsOpen(true)
+  }
+  function onClose() {
+    setIsOpen(false)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <h1>Custom toggle hook</h1>
+      <h3>{isOpen.toString()}</h3>
+
+      <button onClick={toggle} style={{ marginRight: '10px' }}>
+        Toggle
+      </button>
+      <button onClick={onOpen}>Open</button>
+      <button onClick={onClose} style={{ marginLeft: '10px' }}>
+        Close
+      </button>
+
+      {isOpen && (
+        <div
+          style={{ height: '100px', width: '100px ', backgroundColor: 'red' }}
+        >
+          Navbar
+        </div>
+      )}
+    </div>
   )
 }
 
