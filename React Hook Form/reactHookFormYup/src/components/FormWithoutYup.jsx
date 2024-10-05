@@ -14,7 +14,7 @@ function FormWithoutYup() {
       birthDate:'',
    })
 
-const handleSubmit=()={}
+const handleSubmit=()=>{}
    
    return (
     <form onSubmit={handleSubmit}>
